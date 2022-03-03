@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import { useSelector ,useDispatch } from "react-redux";
-import { searchNewCity, setResponseStatus } from "./../Redux/actions/index";
+import { searchNewCity } from "./../Redux/actions/index";
 import ErrorBox from "./ErrorBox";
 
 function SideOne() {
@@ -111,9 +111,7 @@ function SideOne() {
           style={{ top: "8px", right: "23px" }}
           onClick={() => {
             dispatch(searchNewCity(cityName === '' ? currentCityName : cityName));
-            if(cityName === ''){
-              dispatch(setResponseStatus('ERROR'))
-            }
+            setCityName('');
           }}
         >
           <svg
